@@ -6,6 +6,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import MenuIcon from '@material-ui/icons/Menu';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Link from "next/link";
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 export default function Header() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -33,13 +34,16 @@ export default function Header() {
       <header >
         <Grid style={{ background: "white", padding: "0 20px" }} wrap='nowrap' container alignItems="center" justifyContent="space-around">
           <Grid item xs={12} sm={4} md={4} lg={6}>
+            <LazyLoadComponent>
             <SocialIcon />
+            </LazyLoadComponent>
           </Grid>
+          <LazyLoadComponent>
           <Grid container wrap="nowrap" alignItems="center" item xs={8} sm={8} className='mob-display-none' md={6} lg={4} >
             <><LocationOnIcon style={Margin8} /> Naigaon - 401208, Mumbai, Maharashtra</>
             <><LocalPhoneIcon style={Margin8} /> 7721804979</>
-
           </Grid>
+          </LazyLoadComponent>
         </Grid>
         <Grid style={{ background: "linear-gradient(90.05deg, #091FF7 -5.66%, #644796 115.61%, #DF7C14 115.63%)", padding: "10px 20px", }} container alignItems="center" justifyContent="space-around">
           <Grid item xs={4} sm={4} md={4} lg={4}>

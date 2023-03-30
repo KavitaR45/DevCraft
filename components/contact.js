@@ -41,8 +41,8 @@ export default function Contact() {
         { value: 'erp-development', text: 'ERP Next Development' },
         { value: 'other', text: 'Others' },
     ];
-    const MarginBottom = {margin:"0 0 14px 0",fontSize:"1.05rem",lineHeight:"1.8rem"}
-    const Margin8 = {margin:"0 10px",color:"#091FF7"}
+    const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
+    const Margin8 = { margin: "0 10px", color: "#091FF7" }
     return (
         <section id='contact'>
             <Grid container spacing={3} justifyContent="space-between" alignItems="center">
@@ -50,14 +50,14 @@ export default function Contact() {
                     <h2 style={{ ...theme.typography.h2 }}>Get In Touch</h2>
                     <p className="para-text" style={{ ...theme.typography.p }}>Looking to bring your online presence to the next level? Get in touch with me today and let's make it happen. Whether you need a new website, an e-commerce store, a landing page, or a revamp of your current site, I have the skills and expertise to deliver.</p>
                     <p className="para-text" style={{ ...theme.typography.p }}>Contact me now to discuss your project and take your business to the next level!</p>
-                    <p className="para-text" style={{ ...theme.typography.p,fontWeight:"bold" }}>You can also contact us via:</p>
+                    <p className="para-text" style={{ ...theme.typography.p, fontWeight: "bold" }}>You can also contact us via:</p>
                     <Grid container alignItems="center" rowSpacing={2}>
-                   <Grid item xs={12} container alignItems="center" style={MarginBottom}><MailIcon style={Margin8} /> info@devcraft.site</Grid>
-                   <Grid item xs={12} container alignItems="center" style={MarginBottom}><LocalPhoneIcon style={Margin8} /> 7721804979</Grid>
-                </Grid>
+                        <Grid item xs={12} container alignItems="center" style={MarginBottom}><MailIcon style={Margin8} /> info@devcraft.site</Grid>
+                        <Grid item xs={12} container alignItems="center" style={MarginBottom}><LocalPhoneIcon style={Margin8} /> 7721804979</Grid>
+                    </Grid>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={5} style={{ background: "#F5F5F5", padding: "30px", borderRadius: "8px", color: "#091FF7" }}>
-                    <form id="myForm" netlify="true" name="contactForm" method="POST" data-netlify="true" >
+                    <form id="myForm" netlify="true" name="contactForm" method="POST" data-netlify="true" onSubmit={handleSubmit}>
                         <input type="hidden" name="form-name" value="contactForm" />
                         <input title="Name should not contains any numeric letters" pattern="[A-Za-z ]{1,32}" placeholder="Name" label="Name" type="text" name="name" required />
                         <input title="Please enter a valid email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" label="Email" type="mail" name="email" required />
