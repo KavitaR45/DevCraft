@@ -24,7 +24,7 @@ export default function Contact() {
                 "name": event.target.elements.name.value,
                 "email": event.target.elements.email.value,
                 "phone": event.target.elements.phone.value,
-                "project-type": event.target.elements.project - type.value,
+                "project": event.target.elements.project.value,
                 "msg": event.target.elements.msg.value,
             })
         }).then(() => { document.getElementById("myForm").reset() }).catch(error => alert(error))
@@ -61,7 +61,7 @@ export default function Contact() {
                         <input type="hidden" name="form-name" value="contactForm" />
                         <input title="Name should not contains any numeric letters" pattern="[A-Za-z ]{1,32}" placeholder="Name" label="Name" type="text" name="name" required />
                         <input title="Please enter a valid email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" label="Email" type="mail" name="email" required />
-                        <select id="project-type" name="project-type" required>
+                        <select id="project-type" name="project" required>
                             <option value="">Select Project Type</option>
                             {projectTypes.map(projectType => (
                                 <option key={projectType.value} value={projectType.value}>
