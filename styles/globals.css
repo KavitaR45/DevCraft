@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+.text-white{
+  color:white !important;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* .MuiButton-containedPrimary:hover{
+  background-color: #091FF7 !important;
+} */
+
+@media(min-width:1280px) {
+
+  section {
+    padding: 60px 100px 60px 100px;
+  }
+
+}
+
+@media(max-width:1280px) {
+  section {
+    padding: 40px 40px;
+  }
+  .banner-section{
+    padding: 80px 40px;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 3rem !important;
+  }
+
+  h2 {
+    font-size: 1.6rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.4rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+@media(min-width:960px) {
+  .desktop-display-none{
+    display: none !important;
+   }
+}
+@media(max-width:960px) {
+.mobile-no-header{
+  display: none !important;
+   }
+}
+@media(max-width:600px) {
+  section {
+    padding: 40px 20px;
+  }
+  .banner-section{
+    padding: 80px 20px;
+  }
+  .mob-display-none{
+    display: none !important;
+   }
+}
