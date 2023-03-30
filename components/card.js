@@ -4,7 +4,7 @@ export default function Card(props) {
 
     const theme = useTheme();
     return (
-        <section className={props.sectionClass}
+        <section className={props.sectionClass} id="services"
             style={{ background: `${props.banner ? `url(${props.banner}) ${props.bannerColor}` : props.bannerColor}`, }}>
             <Grid container alignItems="center" justifyContent="center" >
                 {props.title2 && <h2 style={{ ...theme.typography.h2 }}>{props.title2}</h2>}

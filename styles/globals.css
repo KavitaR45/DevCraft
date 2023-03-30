@@ -74,3 +74,17 @@ a {
     display: none !important;
    }
 }
+input,textarea,input:focus,textarea:focus,select{
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid darkgray;
+  border-radius:4px;
+  font-size: 16px;
+  background: white;
+}
+textarea{
+    height:80px;
+    resize:none;
+}

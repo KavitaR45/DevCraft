@@ -15,16 +15,15 @@ export default function Header() {
   const SocialIcon = () => {
     return (
       <>
-        <a href="https://twitter.com/NeuralCMS_ai" aria-label="DevCraft Twitter"><img alt='social-media' style={{ ...IconStyle }} src='/images/twitter.png' /></a>
-        <a href='https://www.linkedin.com/company/DevCraft' aria-label="DevCraft LinkedIn"><img alt='social-media' style={{ ...IconStyle }} src='/images/linkedin.png' /></a>
+        {/* <a href="https://twitter.com/NeuralCMS_ai" aria-label="DevCraft Twitter"><img alt='social-media' style={{ ...IconStyle }} src='/images/twitter.png' /></a> */}
+        <a href='https://www.linkedin.com/in/kavita-r-722941205/' target='_blank' aria-label="DevCraft LinkedIn"><img alt='social-media' style={{ ...IconStyle }} src='/images/linkedin.png' /></a>
       </>
     )
   }
   const desktopMenuItems = [
-    { name: "Home", link: "#feature" },
-    { name: "About", link: "#video" },
-    { name: "Services", link: "#faq" },
-    { name: "Portfolio", link: "#faq" },
+    { name: "Home", link: "#banner" },
+    { name: "About", link: "#about" },
+    { name: "Services", link: "#services" },
   ];
 
   const Margin8 = {margin:"0 10px"}
@@ -54,7 +53,7 @@ export default function Header() {
                 </Link>
               </Grid>
             ))}
-            <Button variant="contained" color="primary" href={"#"} style={{ ...theme.button.ghost }}>Contact Us</Button>
+            <Button variant="contained" color="primary" href={"#contact"} style={{ ...theme.button.ghost }}>Contact Us</Button>
           </Grid>
           <Grid container wrap='nowrap' item xs={8} className='desktop-display-none' justifyContent={'flex-end'}>
             <IconButton aria-label="CloseMenu" onClick={handleToggleDrawer} style={{ display: { md: 'none' }, color: "white" }}>

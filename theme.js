@@ -10,21 +10,21 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: "3rem",
+      fontSize: "2.8rem",
       color: colorVar,
-      lineHeight: "3.8rem",
+      lineHeight: "3.4rem",
       fontWeight: "bold",
     },
     h2: {
-      fontSize: "2.5rem",
-      lineHeight: "3rem",
+      fontSize: "2rem",
+      lineHeight: "2.8rem",
       color: colorVar,
       fontWeight: "bold",
       padding:"15px 0"
     },
     h3: {
-      fontSize: "1.8rem",
-      lineHeight: "3rem",
+      fontSize: "1.5rem",
+      lineHeight: "2.5rem",
       color: colorVar,
       fontWeight: "bold",
     },
