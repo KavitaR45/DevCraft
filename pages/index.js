@@ -45,7 +45,7 @@ export default function Home() {
   }
   return (
     <>
-    <SEO title='DevCraft - Freelance Web Developer | WordPress | eCommerce | Web Development' description='Looking for a freelance web developer for your WordPress or eCommerce website? DevCraft offers professional web development services to businesses of all sizes.' canonicalUrl='https://devcraft.site'/>
+    <SEO title='DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='Looking for a freelance web developer for your WordPress or eCommerce website? DevCraft offers professional web development services to businesses of all sizes.' canonicalUrl='https://devcraft.site'/>
     <Layout>
         <Banner {...BannerData}/>
         <Banner {...AboutData}/>

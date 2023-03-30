@@ -40,8 +40,8 @@ export default function Header() {
           </Grid>
           <LazyLoadComponent>
           <Grid container wrap="nowrap" alignItems="center" item xs={8} sm={8} className='mob-display-none' md={6} lg={4} >
-            <><LocationOnIcon style={Margin8} /> Naigaon - 401208, Mumbai, Maharashtra</>
-            <><LocalPhoneIcon style={Margin8} /> 7721804979</>
+            <><LocationOnIcon style={Margin8} /><span style={{...theme.typography.p}}>Naigaon - 401208, Mumbai, Maharashtra</span></>
+            <><LocalPhoneIcon style={Margin8} /><span style={{...theme.typography.p}}>7721804979</span></>
           </Grid>
           </LazyLoadComponent>
         </Grid>
