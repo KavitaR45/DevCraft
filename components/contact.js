@@ -6,29 +6,7 @@ import MailIcon from '@material-ui/icons/Mail';
 
 export default function Contact() {
     const theme = useTheme();
-
-    function encode(data) {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&")
-    }
-
-    const handleSubmit = (event) => {
-        console.log("event", event)
-        event.preventDefault()
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": "contactForm",
-                "name": event.target.elements.name.value,
-                "email": event.target.elements.email.value,
-                "phone": event.target.elements.phone.value,
-                "project": event.target.elements.project.value,
-                "msg": event.target.elements.msg.value,
-            })
-        }).then(() => { document.getElementById("myForm").reset() }).catch(error => alert(error))
-    }
+    
     const projectTypes = [
         { value: 'wordpress-development', text: 'WordPress Development' },
         { value: 'ecommerce-development-wordpress', text: 'Ecommerce Development (WordPress)' },
@@ -57,7 +35,7 @@ export default function Contact() {
                     </Grid>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={5} style={{ background: "#F5F5F5", padding: "30px", borderRadius: "8px", color: "#091FF7" }}>
-                    <form id="myForm" netlify="true" name="contactForm" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                    <form id="myForm" name="contactForm" action='https://submit-form.com/YYqB1NvV'>
                         <input type="hidden" name="form-name" value="contactForm" />
                         <input title="Name should not contains any numeric letters" pattern="[A-Za-z ]{1,32}" placeholder="Name" label="Name" type="text" name="name" required />
                         <input title="Please enter a valid email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" label="Email" type="mail" name="email" required />
@@ -71,7 +49,7 @@ export default function Contact() {
                         </select>
                         <input pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" title="Please enter a valid phone number" placeholder="Mobile Number" label="Mobile Number" type="tel" name="phone" required />
                         <textarea placeholder="Message" label="Message" type="text" name="msg" required></textarea>
-                        <Button type="submit" variant="contained" color="primary" href={"#"} style={{ ...theme.button.primary }}  >Submit</Button>
+                        <Button type="submit" variant="contained" color="primary"  style={{ ...theme.button.primary }}  >Submit</Button>
                     </form>
                 </Grid>
             </Grid >
