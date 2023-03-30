@@ -1,12 +1,14 @@
 {
-  "name": "job-aggregator",
+  "name": "devcraft",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "build-prod": "next build && next export",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
