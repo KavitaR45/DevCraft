@@ -27,7 +27,7 @@ const Footer = () => {
                 <Grid item xs={10} sm={10} md={2}>
                     <h2 className='text-white' style={{ ...theme.typography.p, marginBottom: "10px" }}>Quick Links</h2>
                     {desktopMenuItems.map((menuItem) => (
-                        <Grid item key={menuItem.name}>
+                        <Grid item key={menuItem.name} style={{margin:"12px 0"}}>
                             <Link className='text-white' href={menuItem.link} style={{ textDecoration: "none", ...theme.typography.p, }}>
                                 {menuItem.name}
                             </Link>
