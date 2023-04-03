@@ -1,5 +1,6 @@
 import { useTheme } from "@material-ui/styles";
 import { Button, Grid } from "@material-ui/core";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Banner(props) {
 
     const theme = useTheme();
@@ -15,7 +16,7 @@ export default function Banner(props) {
                
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={6} className={props.imgClass}>
-                    <img src={props.img} style={{ width: "100%" }} />
+                    <LazyLoadImage alt='banner-image' src={props.img} style={{ width: "100%" }} />
                 </Grid>
             </Grid>
         </section>

@@ -6,7 +6,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import MenuIcon from '@material-ui/icons/Menu';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Link from "next/link";
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Header() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -16,8 +16,8 @@ export default function Header() {
   const SocialIcon = () => {
     return (
       <>
-        {/* <a href="https://twitter.com/NeuralCMS_ai" aria-label="DevCraft Twitter"><img alt='social-media' style={{ ...IconStyle }} src='/images/twitter.png' /></a> */}
-        <a href='https://www.linkedin.com/in/kavita-r-722941205/' target='_blank' aria-label="DevCraft LinkedIn"><img alt='social-media' style={{ ...IconStyle }} src='/images/linkedin.png' /></a>
+        {/* <a href="https://twitter.com/NeuralCMS_ai" aria-label="DevCraft Twitter"><LazyLoadImage alt='social-media' style={{ ...IconStyle }} src='/images/twitter.png' /></a> */}
+        <a href='https://www.linkedin.com/in/kavita-r-722941205/' target='_blank' aria-label="DevCraft LinkedIn"><LazyLoadImage alt='social-media' style={{ ...IconStyle }} src='/images/linkedin.png' /></a>
       </>
     )
   }
@@ -40,14 +40,15 @@ export default function Header() {
           </Grid>
           <LazyLoadComponent>
           <Grid container wrap="nowrap" alignItems="center" item xs={8} sm={8} className='mob-display-none' md={6} lg={4} >
-            <><LocationOnIcon style={Margin8} /><span style={{...theme.typography.p}}>Naigaon - 401208, Mumbai, Maharashtra</span></>
-            <><LocalPhoneIcon style={Margin8} /><span style={{...theme.typography.p}}>7721804979</span></>
+            <><LocationOnIcon style={Margin8} /><span style={{fontSize:"0.9rem"}}>Naigaon - 401208, Mumbai, Maharashtra</span></>
+            <><LocalPhoneIcon style={Margin8} /><span style={{fontSize:"0.9rem"}}>7721804979</span></>
           </Grid>
           </LazyLoadComponent>
         </Grid>
         <Grid style={{ background: "linear-gradient(90.05deg, #091FF7 -5.66%, #644796 115.61%, #DF7C14 115.63%)", padding: "10px 20px", }} container alignItems="center" justifyContent="space-around">
           <Grid item xs={4} sm={4} md={4} lg={4}>
-            <p style={{ fontSize: "2rem", color: "white", fontWeight: "800", fontFamily: "system-ui" }}>DEVCRAFT</p>
+            <LazyLoadImage src={"/images/logo.png"} alt='logo' style={{width:"200px"}}/>
+            {/* <p style={{ fontSize: "2rem", color: "white", fontWeight: "800", fontFamily: "system-ui" }}>DEVCRAFT</p> */}
           </Grid>
           <Grid container className='mobile-no-header' item xs={8} sm={8} md={8} lg={6} alignItems='center' justifyContent="flex-end">
             {desktopMenuItems.map((menuItem) => (
