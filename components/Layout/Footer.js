@@ -4,6 +4,7 @@ import { Grid, } from "@material-ui/core";
 import Link from "next/link";
 import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
 import MailIcon from '@material-ui/icons/Mail';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const Footer = () => {
@@ -11,6 +12,7 @@ const Footer = () => {
         { name: "Home", link: "#banner" },
         { name: "About", link: "#about" },
         { name: "Services", link: "#services" },
+        { name: "Portfolio", link: "#portfolio" },
     ];
     const theme = useTheme();
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
@@ -48,6 +50,7 @@ const Footer = () => {
                     </div>
                 </Grid>
             </Grid>
+            <a href='https://wa.link/rbm2sf' target="_blank" style={WhatsappStyle}><WhatsAppIcon style={{fontSize:"30px"}} /></a>
             <div className='text-white' style={{ border: "1px solid gray", marginTop: "60px" }}></div>
             <p style={{ ...theme.typography.p, padding: "0 20px" }} className='text-white' align='center' >© Copyright 2023. All Rights Reserved. Design and Developed By DevCraft</p>
         </footer>
@@ -56,3 +59,20 @@ const Footer = () => {
 
 export default Footer;
 const IconStyle = { padding: "0 10px 0px 10px", width: "55px" }
+
+const WhatsappStyle={
+    textDecoration: "none",
+    backgroundColor: "#25D366",
+    position: "fixed",
+    zIndex: "500",
+    width: "40px",
+    height: "40px",
+    borderRadius: "20%",
+    bottom: "15%",
+    display: "flex",
+    cursor: "pointer",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+    right: "28px",
+}

@@ -25,6 +25,7 @@ export default function Header() {
     { name: "Home", link: "#banner" },
     { name: "About", link: "#about" },
     { name: "Services", link: "#services" },
+    { name: "Portfolio", link: "#portfolio" },
   ];
 
   const Margin8 = {margin:"0 10px"}

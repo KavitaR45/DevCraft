@@ -30,7 +30,7 @@ const theme = createTheme({
     },
     p: {
       fontSize: "1rem",
-      lineHeight: "1.6rem",
+      lineHeight: "1.8rem",
       margin:"10px 0",
       color: colorVar,
     },

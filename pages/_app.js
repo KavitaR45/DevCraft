@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/swiper.min.css'
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
 
