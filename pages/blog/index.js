@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
 import { Box, Button, Grid } from '@material-ui/core';
 import { useTheme } from "@material-ui/styles";
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import {  collection, getDocs } from 'firebase/firestore';
 import {db} from "../../firebase.config"
 
@@ -26,7 +26,7 @@ export default function Home({ blogContent }) {
                  <>
                   <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={4} lg={4}>
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
-                      <img src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
+                      <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>
                         <p style={{ ...theme.typography.p, marginBottom: "0px", color: "gray" }}>{x.author}</p>
                         <h2 style={{ ...theme.typography.h3, padding: "0px" }}>{x.title}</h2>

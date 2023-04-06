@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
-import { Box, Button, Grid } from '@material-ui/core';
+import { Box,  Grid } from '@material-ui/core';
 import { useTheme } from "@material-ui/styles";
 import Link from 'next/link';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase.config"
 import ReactMarkdown from 'react-markdown';
@@ -35,7 +35,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     {latestPosts.map((x, i) => {
                                         return (
                                             <Link href='#' key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7",lineHeight:"25px" }}>
-                                                <img src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px",objectFit: "contain", }} />
+                                                <LazyLoadImage src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px",objectFit: "contain", }} />
                                                 {x.title}
                                             </Link>
                                         )
