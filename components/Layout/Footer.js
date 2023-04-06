@@ -9,10 +9,11 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const Footer = () => {
     const desktopMenuItems = [
-        { name: "Home", link: "#banner" },
-        { name: "About", link: "#about" },
-        { name: "Services", link: "#services" },
-        { name: "Portfolio", link: "#portfolio" },
+        { name: "Home", link: "/#banner" },
+        { name: "About", link: "/#about" },
+        { name: "Services", link: "/#services" },
+        { name: "Portfolio", link: "/#portfolio" },
+        { name: "Blog", link: "/blog" },
     ];
     const theme = useTheme();
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }

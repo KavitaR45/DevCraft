@@ -24,7 +24,13 @@ const theme = createTheme({
     },
     h3: {
       fontSize: "1.3rem",
-      lineHeight: "2rem",
+      lineHeight: "1.8rem",
+      color: colorVar,
+      fontWeight: "bold",
+    },
+    h4: {
+      fontSize: "1.2rem",
+      lineHeight: "1.5rem",
       color: colorVar,
       fontWeight: "bold",
     },

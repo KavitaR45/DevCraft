@@ -22,10 +22,11 @@ export default function Header() {
     )
   }
   const desktopMenuItems = [
-    { name: "Home", link: "#banner" },
-    { name: "About", link: "#about" },
-    { name: "Services", link: "#services" },
-    { name: "Portfolio", link: "#portfolio" },
+    { name: "Home", link: "/#banner" },
+    { name: "About", link: "/#about" },
+    { name: "Services", link: "/#services" },
+    { name: "Portfolio", link: "/#portfolio" },
+    { name: "Blog", link: "/blog" },
   ];
 
   const Margin8 = {margin:"0 10px"}
