@@ -4,7 +4,7 @@ const SEO = ({ title, description, canonicalUrl,articleSchema,faqSchema }) => {
   return (
     <Head>
       <title>{title}</title>
-      <link rel='icon' href='/images/icon.png'/>
+      <link rel='icon' href='/images/icon.jpg'/>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />

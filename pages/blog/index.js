@@ -5,6 +5,7 @@ import { useTheme } from "@material-ui/styles";
 import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import {  collection, getDocs } from 'firebase/firestore';
 import {db} from "../../firebase.config"
+import Link from 'next/link';
 
 export default function Home({ blogContent }) {
   const theme = useTheme();
