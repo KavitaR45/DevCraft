@@ -16,7 +16,7 @@ export default function Home({ blogContent }) {
         <LazyLoadComponent>
           <section style={{ background: `#E2F1F6`, }}>
             <Grid container alignItems="center" justifyContent="center">
-              <h2 style={{ ...theme.typography.h2, marginBottom: "30px" }}>Latest Updates</h2>
+              <h1 style={{ ...theme.typography.h2, marginBottom: "30px" }}>Latest Updates</h1>
             </Grid>
           </section>
           <section style={{ background: "#F1F2F3" }}>
