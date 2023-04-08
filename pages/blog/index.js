@@ -22,6 +22,8 @@ export default function Home({ blogContent }) {
           </section>
           <section style={{ background: "#F1F2F3" }}>
             <Grid container spacing={4} alignItems="flex-start" justifyContent="start">
+              <LazyLoadComponent>
+
               {blogContent.map((x, i) => {
                 return (
                  <>
@@ -41,6 +43,7 @@ export default function Home({ blogContent }) {
                  </>
                 )
               })}
+              </LazyLoadComponent>
             </Grid>
           </section>
         </LazyLoadComponent>

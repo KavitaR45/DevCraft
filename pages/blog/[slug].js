@@ -21,7 +21,7 @@ export default function Home({ blogContent, latestPosts }) {
                         <Grid container spacing={4} alignItems="stretch" justifyContent="space-around">
                             <Grid item xs={12} sm={12} md={8}>
                                 <Box style={{ background: "white", padding: "20px", borderRadius: "4px" }}>
-                                    {blogContent && <img src={'/images' + blogContent.featured_img} style={{ width: "100%", }} />}
+                                    {blogContent && <img src={'/images' + blogContent.featured_img} style={{ width: "100%", }} alt={blogContent.featured_img} />}
                                     <div style={{ padding: "0 20px 20px" }}>
                                         {blogContent && <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{blogContent.date} by {blogContent.author}</p>}
                                         <h1 style={{ ...theme.typography.h2, padding: "0px" }}>{blogContent.title}</h1>
@@ -32,6 +32,7 @@ export default function Home({ blogContent, latestPosts }) {
                             <Grid item xs={12} sm={12} md={4}>
                                 <Box style={{ padding: "20px", background: "white", height: "100%" }}>
                                     <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Recent Posts</h2>
+                                    <LazyLoadComponent>
                                     {latestPosts.map((x, i) => {
                                         return (
                                             <Link href='#' key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7",lineHeight:"25px" }}>
@@ -40,6 +41,7 @@ export default function Home({ blogContent, latestPosts }) {
                                             </Link>
                                         )
                                     })}
+                                    </LazyLoadComponent>
                                 </Box>
                             </Grid>
                         </Grid>
