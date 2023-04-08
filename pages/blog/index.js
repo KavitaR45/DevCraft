@@ -25,6 +25,7 @@ export default function Home({ blogContent }) {
                 return (
                  <>
                   <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={4} lg={4}>
+                    <Link href={x.canonical_url}>
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>
@@ -34,6 +35,7 @@ export default function Home({ blogContent }) {
                         <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button>
                       </div>
                     </Box>
+                    </Link>
                   </Grid>
                  </>
                 )

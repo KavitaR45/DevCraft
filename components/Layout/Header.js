@@ -49,7 +49,9 @@ export default function Header() {
         </Grid>
         <Grid style={{ background: "linear-gradient(90.05deg, #091FF7 -5.66%, #644796 115.61%, #DF7C14 115.63%)", padding: "10px 20px", }} container alignItems="center" justifyContent="space-around">
           <Grid item xs={4} sm={4} md={4} lg={4}>
+            <Link href="/">
             <LazyLoadImage src={"/images/logo.png"} alt='logo' style={{width:"200px"}}/>
+            </Link>
             {/* <p style={{ fontSize: "2rem", color: "white", fontWeight: "800", fontFamily: "system-ui" }}>DEVCRAFT</p> */}
           </Grid>
           <Grid container className='mobile-no-header' item xs={8} sm={8} md={8} lg={6} alignItems='center' justifyContent="flex-end">

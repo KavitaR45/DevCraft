@@ -23,7 +23,9 @@ const Footer = () => {
             <Grid container spacing={2} justifyContent='space-evenly'>
                 <Grid item xs={10} sm={10} md={4}>
                     <div>
+                        <Link href="/">
                         <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px" }} src={"/images/footerLogo.png"} />
+                        </Link>
                         <p className='text-white' style={{ ...theme.typography.p }}>From beautiful web design to tailored website development, trust me to bring your digital vision to life. Our web development solutions are customized to fit your unique needs.</p>
                     </div>
                 </Grid>
