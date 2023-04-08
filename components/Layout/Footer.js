@@ -24,7 +24,7 @@ const Footer = () => {
                 <Grid item xs={10} sm={10} md={4}>
                     <div>
                         <Link href="/">
-                        <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px" }} src={"/images/footerLogo.png"} />
+                            <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px" }} src={"/images/footerLogo.png"} />
                         </Link>
                         <p className='text-white' style={{ ...theme.typography.p }}>From beautiful web design to tailored website development, trust me to bring your digital vision to life. Our web development solutions are customized to fit your unique needs.</p>
                     </div>
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Grid item xs={10} sm={10} md={2}>
                     <h2 className='text-white' style={{ ...theme.typography.p, marginBottom: "10px" }}>Quick Links</h2>
                     {desktopMenuItems.map((menuItem) => (
-                        <Grid item key={menuItem.name} style={{margin:"12px 0"}}>
+                        <Grid item key={menuItem.name} style={{ margin: "12px 0" }}>
                             <Link className='text-white' href={menuItem.link} style={{ textDecoration: "none", ...theme.typography.p, }}>
                                 {menuItem.name}
                             </Link>
@@ -53,7 +53,10 @@ const Footer = () => {
                     </div>
                 </Grid>
             </Grid>
-            <a href='https://wa.link/rbm2sf' target="_blank" style={WhatsappStyle}><WhatsAppIcon style={{fontSize:"30px"}} /></a>
+            <a href='https://wa.link/rbm2sf' target="_blank" style={WhatsappStyle} aria-label="WhatsApp" rel="noopener noreferrer">
+                <WhatsAppIcon style={{ fontSize: "30px" }} alt="WhatsApp Icon" />
+            </a>
+
             <div className='text-white' style={{ border: "1px solid gray", marginTop: "60px" }}></div>
             <p style={{ ...theme.typography.p, padding: "0 20px" }} className='text-white' align='center' >© Copyright 2023. All Rights Reserved. Design and Developed By DevCraft</p>
         </footer>
@@ -63,7 +66,7 @@ const Footer = () => {
 export default Footer;
 const IconStyle = { padding: "0 10px 0px 10px", width: "55px" }
 
-const WhatsappStyle={
+const WhatsappStyle = {
     textDecoration: "none",
     backgroundColor: "#25D366",
     position: "fixed",

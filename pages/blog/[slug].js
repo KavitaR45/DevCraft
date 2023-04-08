@@ -14,7 +14,7 @@ export default function Home({ blogContent, latestPosts }) {
 
     return (
         <>
-            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema}/>
+            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site/"+blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema}/>
             <Layout>
                 <LazyLoadComponent>
                     <section style={{ background: "#F1F2F3" }}>
@@ -23,7 +23,7 @@ export default function Home({ blogContent, latestPosts }) {
                                 <Box style={{ background: "white", padding: "20px", borderRadius: "4px" }}>
                                     {blogContent && <img src={'/images' + blogContent.featured_img} style={{ width: "100%", }} />}
                                     <div style={{ padding: "0 20px 20px" }}>
-                                        {blogContent && <p style={{ ...theme.typography.p, marginBottom: "0px", color: "gray" }}>{blogContent.date} by {blogContent.author}</p>}
+                                        {blogContent && <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{blogContent.date} by {blogContent.author}</p>}
                                         <h1 style={{ ...theme.typography.h2, padding: "0px" }}>{blogContent.title}</h1>
                                         <ReactMarkdown>{blogContent.Description}</ReactMarkdown>
                                     </div>
