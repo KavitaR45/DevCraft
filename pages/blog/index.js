@@ -12,7 +12,7 @@ export default function Home({ blogContent }) {
 
   return (
     <>
-      <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl='https://devcraft.site/blog' />
+      <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl='https://www.devcraft.site/blog' />
       <Layout>
         <LazyLoadComponent>
           <section style={{ background: `#E2F1F6`, }}>
