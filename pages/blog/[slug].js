@@ -35,7 +35,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     <LazyLoadComponent>
                                     {latestPosts.map((x, i) => {
                                         return (
-                                            <Link href='#' key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7",lineHeight:"25px" }}>
+                                            <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7",lineHeight:"25px" }}>
                                                 <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px",objectFit: "contain", }} />
                                                 {x.title}
                                             </Link>
