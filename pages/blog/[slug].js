@@ -49,7 +49,7 @@ export default function Home({ blogContent, latestPosts }) {
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
-                                <Box style={{ padding: "20px", background: "white", height: "100%" }}>
+                                <Box style={{ padding: "20px", background: "white", height: "max-content" }}>
                                     <div style={{marginBottom:"40px",background: "#F5F5F5", padding: "20px 15px", borderRadius: "8px", color: "#091FF7" }}>
                                     <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Get In Touch</h2>
                                     <ContactForm />
