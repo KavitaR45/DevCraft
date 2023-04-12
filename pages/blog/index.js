@@ -6,10 +6,11 @@ import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-componen
 import {  collection, getDocs } from 'firebase/firestore';
 import {db} from "../../firebase.config"
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home({ blogContent }) {
   const theme = useTheme();
-
+console.log("BLOF CONTENT",blogContent)
   return (
     <>
       <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl='https://www.devcraft.site/blog' />
@@ -27,7 +28,7 @@ export default function Home({ blogContent }) {
               {blogContent.map((x, i) => {
                 return (
                  <>
-                  <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={4} lg={4}>
+                  <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
                     <Link href={x.canonical_url}>
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
@@ -56,8 +57,27 @@ export async function getStaticProps() {
   try {
     const blogsRef = collection(db, 'blog');
     const blogsSnapshot = await getDocs(blogsRef);
-    const blogContent = blogsSnapshot.docs.map(doc => doc.data());
-
+    let blogContent = blogsSnapshot.docs.map(doc => doc.data());
+    function rearrangeObjectsByDate(arr) {
+      // Convert the date strings to JavaScript Date objects and attach them to the original objects
+      const objectsWithDate = arr.map(obj => {
+        const dateString = obj.date;
+        const dateObject = new Date(dateString);
+        return { ...obj, dateObject };
+      });
+    
+      // Sort the objects based on the date property in descending order (latest date first)
+      objectsWithDate.sort((a, b) => b.dateObject - a.dateObject);
+    
+      // Remove the temporary dateObject property from the sorted objects
+      const sortedObjects = objectsWithDate.map(obj => {
+        const { dateObject, ...rest } = obj;
+        return rest;
+      });
+    
+      return sortedObjects;
+    }
+    blogContent = rearrangeObjectsByDate(blogContent)
     return {
       props: {
         blogContent

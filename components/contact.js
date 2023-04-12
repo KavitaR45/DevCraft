@@ -22,7 +22,7 @@ export default function Contact() {
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
     const Margin8 = { margin: "0 10px", color: "#091FF7" }
     return (
-        <section id='contact' style={{ background: `url(/images/services/banner.png) #E2F1F6`, }}>
+        <section id='contact' >
             <Grid container spacing={3} justifyContent="space-between" alignItems="center">
                 <Grid item xs={12} sm={12} md={6} lg={5}>
                     <h2 style={{ ...theme.typography.h2 }}>Get In Touch</h2>
