@@ -1,12 +1,13 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
-import { Box,  Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { useTheme } from "@material-ui/styles";
 import Link from 'next/link';
 import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase.config"
 import ReactMarkdown from 'react-markdown';
+import { ContactForm } from '@/components/contact';
 
 export default function Home({ blogContent, latestPosts }) {
     // console.log("BLOG CONTENT Single", blogContent, latestPosts)
@@ -14,25 +15,25 @@ export default function Home({ blogContent, latestPosts }) {
     function rearrangeObjectsByDate(arr) {
         // Convert the date strings to JavaScript Date objects and attach them to the original objects
         const objectsWithDate = arr.map(obj => {
-          const dateString = obj.date;
-          const dateObject = new Date(dateString);
-          return { ...obj, dateObject };
+            const dateString = obj.date;
+            const dateObject = new Date(dateString);
+            return { ...obj, dateObject };
         });
-      
+
         // Sort the objects based on the date property in descending order (latest date first)
         objectsWithDate.sort((a, b) => b.dateObject - a.dateObject);
-      
+
         // Remove the temporary dateObject property from the sorted objects
         const sortedObjects = objectsWithDate.map(obj => {
-          const { dateObject, ...rest } = obj;
-          return rest;
+            const { dateObject, ...rest } = obj;
+            return rest;
         });
-      
+
         return sortedObjects;
-      }
+    }
     return (
         <>
-            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site/"+blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema}/>
+            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site/" + blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema} />
             <Layout>
                 <LazyLoadComponent>
                     <section style={{ background: "#F1F2F3" }}>
@@ -49,18 +50,25 @@ export default function Home({ blogContent, latestPosts }) {
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                                 <Box style={{ padding: "20px", background: "white", height: "100%" }}>
+                                    <div style={{marginBottom:"40px",background: "#F5F5F5", padding: "20px 15px", borderRadius: "8px", color: "#091FF7" }}>
+                                    <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Get In Touch</h2>
+                                    <ContactForm />
+                                    </div>
+                                    <div>
                                     <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Recent Posts</h2>
                                     <LazyLoadComponent>
-                                    {rearrangeObjectsByDate(latestPosts).map((x, i) => {
-                                        return (
-                                            <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7",lineHeight:"25px" }}>
-                                                <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px",objectFit: "contain", }} />
-                                                {x.title}
-                                            </Link>
-                                        )
-                                    })}
+                                        {rearrangeObjectsByDate(latestPosts).map((x, i) => {
+                                            return (
+                                                <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px" }}>
+                                                    <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px", objectFit: "contain", }} />
+                                                    {x.title}
+                                                </Link>
+                                            )
+                                        })}
                                     </LazyLoadComponent>
+                                    </div>
                                 </Box>
+
                             </Grid>
                         </Grid>
                     </section>
