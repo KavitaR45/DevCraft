@@ -99,7 +99,7 @@ export default function Home({ blogContent }) {
                             <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{x.author}</p>
                             <h2 style={{ ...theme.typography.h3, padding: "0px" }}>{x.title}</h2>
                             <p style={{ ...theme.typography.p, }}>{x.Description.slice(0, 105) + '....'}</p>
-                            <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button>
+                            {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
                           </div>
                         </Box>
                       </Link>

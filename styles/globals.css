@@ -52,6 +52,12 @@ p {
   margin: 10px 0;
   color: #000;
 }
+@media(max-width:600px){
+  
+  p {
+    font-size: 1.1rem;
+  }
+}
 
 /* .MuiButton-containedPrimary:hover{
   background-color: #091FF7 !important;
@@ -77,18 +83,18 @@ ol,ul{
   }
 
   h1 {
-    font-size: 2rem !important;
-    line-height: 3rem !important;
+    font-size: 1.5rem !important;
+    line-height: 2.2rem !important;
   }
 
   h2 {
-    font-size: 1.6rem !important;
-    line-height: 2.5rem !important;
+    font-size: 1.3rem !important;
+    line-height: 1.8rem !important;
   }
 
   h3 {
-    font-size: 1.4rem !important;
-    line-height: 2rem !important;
+    font-size: 1.2rem !important;
+    line-height: 1.5rem !important;
   }
 }
 
