@@ -4,13 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head >
-      <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-LYHP773JR2"
-></script>
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LYHP773JR2"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -19,13 +19,13 @@ export default function Document() {
         gtag('config', 'G-LYHP773JR2');
       }, 3000);
     `,
-  }}
-/>
+          }}
+        />
 
-          <script
-  type="text/javascript"
-  dangerouslySetInnerHTML={{
-    __html: `
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
       (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;
@@ -36,8 +36,8 @@ export default function Document() {
         }, 3000);
       })(window, document, "clarity", "script", "gj54bm0k54");
     `,
-  }}
-/>
+          }}
+        />
 
       </Head>
       <body>

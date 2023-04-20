@@ -33,7 +33,7 @@ export default function Home({ blogContent, latestPosts }) {
     }
     return (
         <>
-            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site/" + blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema} />
+            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site" + blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema} />
             <Layout>
                 <LazyLoadComponent>
                     <section style={{ background: "#F1F2F3" }}>
