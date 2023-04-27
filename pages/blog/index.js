@@ -34,7 +34,7 @@ console.log("BLOF CONTENT",blogContent)
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>
                         <p style={{ ...theme.typography.p, marginBottom: "0px",  }}>{x.author}</p>
-                        <h2 style={{ ...theme.typography.h3, padding: "0px" }}>{x.title}</h2>
+                        <h2 style={{ ...theme.typography.h3, padding: "0px",textTransform:"capitalize" }}>{x.title}</h2>
                         <p style={{ ...theme.typography.p, }}>{x.Description.slice(0,105)+'....'}</p>
                         {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
                       </div>

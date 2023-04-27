@@ -62,7 +62,7 @@ export default function Header() {
                 </Link>
               </Grid>
             ))}
-            <Button variant="contained" color="primary" href={"#contact"} style={{ ...theme.button.ghost }}>Contact Us</Button>
+            <Button variant="contained" color="primary" href={"/#contact"} style={{ ...theme.button.ghost }}>Contact Us</Button>
           </Grid>
           <Grid container wrap='nowrap' item xs={8} className='desktop-display-none' justifyContent={'flex-end'}>
             <IconButton aria-label="CloseMenu" onClick={handleToggleDrawer} style={{ display: { md: 'none' }, color: "white" }}>

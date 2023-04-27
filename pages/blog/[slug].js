@@ -43,7 +43,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     {blogContent && <img src={'/images' + blogContent.featured_img} style={{ width: "100%", }} alt={blogContent.featured_img} />}
                                     <div style={{ padding: "0 20px 20px" }}>
                                         {blogContent && <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{blogContent.date} by {blogContent.author}</p>}
-                                        <h1 style={{ ...theme.typography.h2, padding: "0px" }}>{blogContent.title}</h1>
+                                        <h1 style={{ ...theme.typography.h2, padding: "0px",textTransform:"capitalize" }}>{blogContent.title}</h1>
                                         <ReactMarkdown>{blogContent.Description}</ReactMarkdown>
                                     </div>
                                 </Box>
@@ -59,7 +59,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     <LazyLoadComponent>
                                         {rearrangeObjectsByDate(latestPosts).map((x, i) => {
                                             return (
-                                                <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px" }}>
+                                                <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px",textTransform:"capitalize" }}>
                                                     <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px", objectFit: "contain", }} />
                                                     {x.title}
                                                 </Link>
