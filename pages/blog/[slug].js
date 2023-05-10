@@ -57,7 +57,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     <div>
                                     <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Recent Posts</h2>
                                     <LazyLoadComponent>
-                                        {rearrangeObjectsByDate(latestPosts).map((x, i) => {
+                                        {rearrangeObjectsByDate(latestPosts).filter(x=>x.status != 'draft').map((x, i) => {
                                             return (
                                                 <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px",textTransform:"capitalize" }}>
                                                     <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px", objectFit: "contain", }} />

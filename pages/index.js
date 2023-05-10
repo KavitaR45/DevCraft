@@ -9,9 +9,10 @@ import { useTheme } from "@material-ui/styles";
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../firebase.config"
 import Link from 'next/link';
-import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component'
 
 export default function Home({ blogContent }) {
+  console.log("BLOG CONTENT", blogContent)
   const theme = useTheme();
   const BannerData = {
     title1: "Creative Web Development Solutions for Your Business Growth",
@@ -82,13 +83,13 @@ export default function Home({ blogContent }) {
           </section>
         </LazyLoadComponent>
         <LazyLoadComponent>
-          <section style={{ background: `url(/images/services/banner.png) #E2F1F6`, }}id='blog'>
+          <section style={{ background: `url(/images/services/banner.png) #E2F1F6`, }} id='blog'>
             <Grid container alignItems="center" justifyContent="center">
-              <h2 style={{ ...theme.typography.h2, marginBottom: "30px",marginTop:"0" }}>Latest Posts</h2>
+              <h2 style={{ ...theme.typography.h2, marginBottom: "30px", marginTop: "0" }}>Latest Posts</h2>
             </Grid>
-            <Grid container spacing={4} style={{marginBottom:"20px"}} alignItems="flex-start" justifyContent="start">
+            <Grid container spacing={4} style={{ marginBottom: "20px" }} alignItems="flex-start" justifyContent="start">
 
-              {blogContent.map((x, i) => {
+              {blogContent.filter(x=>x.status != 'draft').slice(0, 3).map((x, i) => {
                 return (
                   <>
                     <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
@@ -97,7 +98,7 @@ export default function Home({ blogContent }) {
                           <LazyLoadImage src={'/images' + x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                           <div style={{ padding: "0 20px 20px" }}>
                             <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{x.author}</p>
-                            <h2 style={{ ...theme.typography.h3, padding: "0px",textTransform:"capitalize" }}>{x.title}</h2>
+                            <h2 style={{ ...theme.typography.h3, padding: "0px", textTransform: "capitalize" }}>{x.title}</h2>
                             <p style={{ ...theme.typography.p, }}>{x.Description.slice(0, 105) + '....'}</p>
                             {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
                           </div>
@@ -108,7 +109,7 @@ export default function Home({ blogContent }) {
                 )
               })}
             </Grid>
-            <Button variant="contained" color="primary" style={{margin:"20px auto 0 auto",display:"block",width:"max-content"}} href={"/blog"}>View All </Button>
+            <Button variant="contained" color="primary" style={{ margin: "20px auto 0 auto", display: "block", width: "max-content" }} href={"/blog"}>View All </Button>
           </section>
         </LazyLoadComponent>
         <LazyLoadComponent>
@@ -144,7 +145,7 @@ export async function getStaticProps() {
       return sortedObjects;
     }
     blogContent = rearrangeObjectsByDate(blogContent)
-    blogContent = blogContent.slice(0, 3);
+    blogContent = blogContent.slice(0, 6);
     return {
       props: {
         blogContent

@@ -25,7 +25,7 @@ console.log("BLOF CONTENT",blogContent)
             <Grid container spacing={4} alignItems="flex-start" justifyContent="start">
               <LazyLoadComponent>
 
-              {blogContent.map((x, i) => {
+              {blogContent.filter(x=>x.status != 'draft').map((x, i) => {
                 return (
                  <>
                   <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
