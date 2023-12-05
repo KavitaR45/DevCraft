@@ -1,0 +1,79 @@
+User-agent: *
+Disallow: /private/
+Allow: /public/
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: Slurp
+Disallow:
+
+User-agent: Teoma
+Disallow:
+
+User-agent: TwitterBot
+Disallow:
+
+User-agent: Baiduspider
+Disallow:
+
+User-agent: RogerBot
+Disallow:
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Blekkobot
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+User-agent: speedy_spider
+Disallow:
+
+User-agent: ArchitextSpider
+Crawl-delay: 15
+Disallow:
+
+User-agent: Lycos_Spider_(T-Rex)
+Crawl-delay: 15
+Disallow:
+
+User-agent: YandexBot
+Disallow:
+
+User-agent: MantraAgent
+Disallow:
+
+User-agent: ExaBot
+Crawl-delay: 15
+Disallow:
+
+User-agent: Sosospider
+Crawl-delay: 15
+Disallow:
+
+User-agent: Butterfly
+Crawl-delay: 15
+Disallow:
+
+User-agent: ia_archiver
+Crawl-delay: 15
+Disallow:
+
+User-agent: MJ12bot
+Crawl-delay: 15
+Disallow:
+
+User-agent: Omgilibot
+Crawl-delay: 15
+Disallow:
+
+User-agent: Yeti/Naverbot
+Disallow:
+
+User-agent: CariBot
+Disallow:
+
+sitemap: https://www.devcraft.site/sitemap.xml
