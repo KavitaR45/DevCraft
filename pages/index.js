@@ -1,19 +1,18 @@
-import Banner from '@/components/banner'
-import Card from '@/components/card';
+import Banner from '@/components/banner';
 import Contact from '@/components/contact';
 import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
-import { Grid, Box, Button, } from "@material-ui/core";
-import Slider from '@/components/slider';
-import { useTheme } from "@material-ui/styles";
+import { Grid, Box } from "@material-ui/core";
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from "../firebase.config"
+import { db } from "../firebase.config";
 import Link from 'next/link';
-import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component'
+import About from "@/components/about";
+import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
+import ServicesSection from '@/components/services';
+import Project from '@/components/project';
+import Testimonial from '@/components/testimonial';
 
 export default function Home({ blogContent }) {
-  console.log("BLOG CONTENT", blogContent)
-  const theme = useTheme();
   const BannerData = {
     title1: "Creative Web Development Solutions for Your Business Growth",
     para: <>Get top-quality web development services for WordPress , E-Commerce, Website Revamping, Landing Page, Static or Dynamic sites and Headless CMS. From creating a stunning website to improving your online presence, I offer tailored and affordable solutions for your unique needs.</>,
@@ -26,38 +25,95 @@ export default function Home({ blogContent }) {
     bannerColor: "#E2F1F6",
     id: "banner"
   }
-  const AboutData = {
-    title2: "About Me",
-    para: <>Hi, I'm a freelance developer with 2+ years of experience. My focus is on building accessible and high-performing digital experiences for clients. I stay up-to-date with the latest technologies and best practices in the industry.<br /><br />I started my journey in web development field in 2019, with HTML, CSS, and JavaScript. As time passed, I shifted to WordPress and WooCommerce, and gradually started working on React.js, Next.js, Firebase and many more. <br /><br /> I'm dedicated to delivering quality work and providing excellent customer service. Let's work together!</>,
-    img: "/images/about/main.png",
-    bannerColor: "#fff",
+  const content = {
+    imgSrc: "/assets/img/images/h5_about_img.png",
+    title: "Crafting Digital Experiences with Precision",
+    subTitle: "About Us",
+    description: "As a skilled freelance developer, I bring your digital ideas to life. Specializing in web development, I create tailored solutions for your online presence, ensuring functionality, aesthetics, and user satisfaction.",
+    listItems: [
+      "Responsive Design",
+      "100% Better results",
+      "Client-Centric Approach",
+      "Customized Solutions",
+    ],
+    linkHref: "#portfolio",
+    linkText: "Explore My Work",
     id: "about"
-  }
-  const CardData = {
-    title2: "What I Offer",
-    para: 'Great platform for the job seeker that searching Great platform for the job seeker that searching Great platform for the job seeker that searching for new career heights and passionate about startups',
-    img: "/images/banner/sideImg.png",
-    banner: "/images/services/banner.png",
-    id: "services",
-    bannerColor: "#E2F1F6",
-    cardD: [
-      { title3: "Wordpress Development", para: 'High-quality and cost-effective WordPress development solutions for businesses of all sizes.', bg: "linear-gradient(90deg, #009688, #4caf50)" },
-      { title3: "Website Development", para: 'Take your business to the next level with a website that looks awesome on any screen size.', bg: "linear-gradient(90.05deg, rgb(9, 31, 247) -5.66%, rgb(100, 71, 150) 115.61%, rgb(223, 124, 20) 115.63%)" },
-      { title3: "E-Commerce Development", para: 'Launch your online store with ease! From product listings to checkout, I\'ve got you covered.', bg: "linear-gradient(90deg, #642b73, #c6426e)" },
-      { title3: "Website Revamping", para: 'Tired of your outdated website? Revamp it with us for a fresh, modern look that matches your brand identity.', bg: "linear-gradient(90deg, #8c00ff 0%, #ff0084 100%)" },
-      { title3: "Landing Page", para: 'First impression matters! Get a professional landing page to represent your brand and boost conversions.', bg: "linear-gradient(90deg, #f12711, #f5af19)" },
-      { title3: "Static / Dynamic Site", para: 'From simple static to complex dynamic sites, I provide comprehensive web development services.', bg: "linear-gradient(90deg, #9400D3 -5.66%, #4B0082 115.61%, #000080 115.63%)" },
+  };
+  
+  const Services = {
+    subTitle: 'Our Services',
+    title: 'Unlocking Digital Potential for Your Business',
+    desc: 'As a freelance developer, I specialize in providing top-notch digital solutions to enhance your online presence and meet your unique business needs.',
+    servicesData: [
+      {
+        icon: 'flaticon-design',
+        title: 'Web Design & Development',
+        description: 'Crafting visually stunning and user-centric websites tailored to your business needs.'
+      },
+      {
+        icon: 'flaticon-shopping-cart',
+        title: 'E-commerce Solutions',
+        description: 'Boost your online sales with comprehensive e-commerce development services. '
+      },
+      {
+        icon: 'flaticon-code',
+        title: 'Headless CMS Development',
+        description: 'Experience the power of Headless CMS for streamlined content management.'
+      },
+      {
+        icon: 'flaticon-development',
+        title: 'Wordpress Development',
+        description: 'Creating powerful and customizable WordPress solutions to elevate your online presence.'
+      },
+      // Add other service items as needed
+    ]
+  };
+  
+  const Projects = {
+    title: "Case Studies",
+    projectLink: '#',
+    id:'portfolio',
+    desc: "We’ve Done Lot’s Of Work, Let’s Check Some From Here",
+    projectData: [
+      {
+        imgSrc: "/images/project/portfolio.png",
+        projectLink: "https://webwizardry.netlify.app/",
+        projectTitle: "Personal Portfolio",
+        projectCategory: "Creative Work"
+      },
+      {
+        imgSrc: "/images/project/web.png",
+        projectLink: "https://netart.io/",
+        projectTitle: "Netart",
+        projectCategory: "Design Development"
+      },
+      {
+        imgSrc: "/images/project/web-1.png",
+        projectLink: "https://glastonemosaic.com/",
+        projectTitle: "Glastone Mosaic",
+        projectCategory: "Design Development"
+      },
+      {
+        imgSrc: "/images/project/ecom.png",
+        projectLink: "https://parrotcrow.in/",
+        projectTitle: "Parrot Crow",
+        projectCategory: "Development"
+      },
+      {
+        imgSrc: "/images/project/sync.png",
+        projectLink: "https://syncmedia.io/",
+        projectTitle: "Sync Media",
+        projectCategory: "Creative"
+      },
+      {
+        imgSrc: "/images/project/service.png",
+        projectLink: "https://dataasservices.com/",
+        projectTitle: "Data As Services",
+        projectCategory: "Design Development"
+      }
     ]
   }
-  const ImgData = [
-    { link: "https://webwizardry.netlify.app/", img: '/images/project/portfolio.png', info: "Portfolio Site" },
-    { link: "https://netart.io/", img: '/images/project/web.png', info: "Website Revamping" },
-    { link: "http://parrotcrow.in/", img: '/images/project/ecom.png', info: "E-Commerce Development" },
-    { link: "https://webwizardry.netlify.app/", img: '/images/project/landing.png', info: "Dynamic Site" },
-    { link: "https://blockbuster-review.netlify.app/", img: '/images/project/movie.png', info: "Dynamic Site" },
-    { link: "https://syncmedia.io/", img: '/images/project/sync.png', info: 'Website Development' },
-    { link: "https://nishakreates.com/", img: '/images/project/personal.png', info: "Wordpress Site" },
-  ]
   return (
     <>
       <SEO title='DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='Looking for a freelance web developer for your WordPress or eCommerce website? DevCraft offers professional web development services to businesses of all sizes.' canonicalUrl='https://www.devcraft.site/' />
@@ -66,30 +122,30 @@ export default function Home({ blogContent }) {
           <Banner {...BannerData} />
         </LazyLoadComponent>
         <LazyLoadComponent>
-          <Banner {...AboutData} />
+          <About content={content} />
         </LazyLoadComponent>
         <LazyLoadComponent>
-          <Card {...CardData} />
+          <ServicesSection {...Services} />
         </LazyLoadComponent>
         <LazyLoadComponent>
-          <section id='portfolio' >
-            <Grid container alignItems="center" justifyContent="center">
-              <h2 style={{ ...theme.typography.h2, marginBottom: "30px" }}>My Portfolio</h2>
-            </Grid>
-            <Grid container spacing={4} alignItems="center" justifyContent="center">
-              {ImgData.map((x, i) => <Grid justifyContent='center' container item xs={11} sm={6} md={3} key={'portfolio_Slider' + i}><a href={x.link} target='_blank'><img alt='portfolio-image' style={{ width: "100%", }} src={x.img} /></a><p style={{ ...theme.typography.p, fontWeight: "bold" }}>{x.info}</p></Grid>)}
-            </Grid>
-
-          </section>
+          <Project {...Projects} />
         </LazyLoadComponent>
+        {/* <LazyLoadComponent>
+          <Testimonial />
+        </LazyLoadComponent> */}
         <LazyLoadComponent>
           <section style={{ background: `url(/images/services/banner.png) #E2F1F6`, }} id='blog'>
             <Grid container alignItems="center" justifyContent="center">
-              <h2 style={{ ...theme.typography.h2, marginBottom: "30px", marginTop: "0" }}>Latest Posts</h2>
+            <div className="section-title section-title-three text-center mb-60 tg-heading-subheading animation-style1">
+  <span className="sub-title tg-element-title">Our Blogs</span>
+  <h2 className="title tg-element-title">Read Our Latest Updates</h2>
+  <p>Explore insightful articles and stay informed about the latest trends in technology and development. </p>
+</div>
+
             </Grid>
             <Grid container spacing={4} style={{ marginBottom: "20px" }} alignItems="flex-start" justifyContent="start">
 
-              {blogContent.filter(x=>x.status != 'draft').slice(0, 3).map((x, i) => {
+              {blogContent.filter(x => x.status != 'draft').slice(0, 3).map((x, i) => {
                 return (
                   <>
                     <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
@@ -97,10 +153,8 @@ export default function Home({ blogContent }) {
                         <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                           <LazyLoadImage src={'/images' + x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                           <div style={{ padding: "0 20px 20px" }}>
-                            <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{x.author}</p>
-                            <h2 style={{ ...theme.typography.h3, padding: "0px", textTransform: "capitalize" }}>{x.title}</h2>
-                            <p style={{ ...theme.typography.p, }}>{x.Description.slice(0, 105) + '....'}</p>
-                            {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
+                            <h3 className='title' style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
+                            <p >{x.Description.slice(0, 105) + '....'}</p>
                           </div>
                         </Box>
                       </Link>
@@ -109,8 +163,8 @@ export default function Home({ blogContent }) {
                 )
               })}
             </Grid>
-            <Button variant="contained" color="primary" style={{ margin: "20px auto 0 auto", display: "block", width: "max-content" }} href={"/blog"}>View All </Button>
-          </section>
+            <Link href={"/blog"} className="btn btn-three" style={{ margin: "20px auto 0 auto", display: "block", width: "max-content" }} >View All</Link>
+            </section>
         </LazyLoadComponent>
         <LazyLoadComponent>
           <Contact />

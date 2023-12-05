@@ -1,7 +1,6 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
 import { Box, Grid } from '@material-ui/core';
-import { useTheme } from "@material-ui/styles";
 import Link from 'next/link';
 import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import { collection, getDocs } from 'firebase/firestore';
@@ -10,8 +9,6 @@ import ReactMarkdown from 'react-markdown';
 import { ContactForm } from '@/components/contact';
 
 export default function Home({ blogContent, latestPosts }) {
-    // console.log("BLOG CONTENT Single", blogContent, latestPosts)
-    const theme = useTheme();
     function rearrangeObjectsByDate(arr) {
         // Convert the date strings to JavaScript Date objects and attach them to the original objects
         const objectsWithDate = arr.map(obj => {
@@ -42,8 +39,8 @@ export default function Home({ blogContent, latestPosts }) {
                                 <Box style={{ background: "white", padding: "20px", borderRadius: "4px" }}>
                                     {blogContent && <img src={'/images' + blogContent.featured_img} style={{ width: "100%", }} alt={blogContent.featured_img} />}
                                     <div style={{ padding: "0 20px 20px" }}>
-                                        {blogContent && <p style={{ ...theme.typography.p, marginBottom: "0px", }}>{blogContent.date} by {blogContent.author}</p>}
-                                        <h1 style={{ ...theme.typography.h2, padding: "0px",textTransform:"capitalize" }}>{blogContent.title}</h1>
+                                        {/* {blogContent && <p style={{  marginBottom: "0px", }}>{blogContent.date} by {blogContent.author}</p>} */}
+                                        <h1 style={{margin:"15px 0 10px 0"}} className='title'>{blogContent.title}</h1>
                                         <ReactMarkdown>{blogContent.Description}</ReactMarkdown>
                                     </div>
                                 </Box>
@@ -51,11 +48,11 @@ export default function Home({ blogContent, latestPosts }) {
                             <Grid item xs={12} sm={12} md={4}>
                                 <Box style={{ padding: "20px", background: "white", height: "max-content" }}>
                                     <div style={{marginBottom:"40px",background: "#F5F5F5", padding: "20px 15px", borderRadius: "8px", color: "#091FF7" }}>
-                                    <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Get In Touch</h2>
+                                    <h2 style={{ padding: "0px" }}>Get In Touch</h2>
                                     <ContactForm />
                                     </div>
                                     <div>
-                                    <h2 style={{ ...theme.typography.h3, padding: "0px" }}>Recent Posts</h2>
+                                    <h2 style={{ padding: "0px" }}>Recent Posts</h2>
                                     <LazyLoadComponent>
                                         {rearrangeObjectsByDate(latestPosts).filter(x=>x.status != 'draft').map((x, i) => {
                                             return (

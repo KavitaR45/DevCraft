@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "@material-ui/styles";
 import { Grid, } from "@material-ui/core";
 import Link from "next/link";
 import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
@@ -15,7 +14,6 @@ const Footer = () => {
         { name: "Portfolio", link: "/#portfolio" },
         { name: "Blog", link: "/blog" },
     ];
-    const theme = useTheme();
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
     const Margin8 = { margin: "0 10px" }
     return (
@@ -24,24 +22,24 @@ const Footer = () => {
                 <Grid item xs={10} sm={10} md={4}>
                     <div>
                         <Link href="/" aria-label="logo" >
-                            <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px" }} src={"/images/footerLogo.png"} />
+                            <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px",marginBottom:"15px" }} src={"/images/footerLogo.png"} />
                         </Link>
-                        <p className='text-white' style={{ ...theme.typography.p }}>From beautiful web design to tailored website development, trust me to bring your digital vision to life. Our web development solutions are customized to fit your unique needs.</p>
+                        <p className='text-white'>From beautiful web design to tailored website development, trust me to bring your digital vision to life. Our web development solutions are customized to fit your unique needs.</p>
                     </div>
                 </Grid>
                 <Grid item xs={10} sm={10} md={2}>
-                    <h2 className='text-white' style={{ ...theme.typography.p, marginBottom: "10px" }}>Quick Links</h2>
+                    <h2 className='text-white' style={{ marginBottom: "10px",padding:"0" }}>Quick Links</h2>
                     {desktopMenuItems.map((menuItem) => (
                         <Grid item key={menuItem.name} style={{ margin: "12px 0" }}>
-                            <Link className='text-white' href={menuItem.link} style={{ textDecoration: "none", ...theme.typography.p, }}>
+                            <Link className='text-white' href={menuItem.link} style={{ textDecoration: "none", }}>
                                 {menuItem.name}
                             </Link>
                         </Grid>
                     ))}
                 </Grid>
                 <Grid item xs={10} sm={10} md={3}>
-                    <h2 className='text-white' style={{ ...theme.typography.p, marginBottom: "10px" }}>Contact Us</h2>
-                    <Grid container alignItems="center" rowSpacing={2}>
+                    <h2 className='text-white' style={{ marginBottom: "10px",padding:"0" }}>Contact Us</h2>
+                    <Grid container alignItems="center" rowspacing={2}>
                         <Grid item xs={12} wrap='nowrap' container alignItems="center" style={MarginBottom}><LocationOnIcon style={Margin8} />Mittal Enclave, Naigaon (E) - 401208, Mumbai, Maharashtra, India</Grid>
                         <Grid item xs={12} container alignItems="center" style={MarginBottom}><MailIcon style={Margin8} /> info@devcraft.site</Grid>
                         <Grid item xs={12} container alignItems="center" style={MarginBottom}><LocalPhoneIcon style={Margin8} /> 7721804979</Grid>
@@ -58,7 +56,7 @@ const Footer = () => {
             </a>
 
             <div className='text-white' style={{ border: "1px solid gray", marginTop: "60px" }}></div>
-            <p style={{ ...theme.typography.p, padding: "0 20px" }} className='text-white' align='center' >© Copyright 2023. All Rights Reserved. Design and Developed By DevCraft</p>
+            <p style={{ padding: "10px 20px",margin:"0px" }} className='text-white' align='center' >© Copyright 2023. All Rights Reserved. Design and Developed By DevCraft</p>
         </footer>
     );
 };

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useTheme } from "@material-ui/styles";
 import { Button, Grid, IconButton, List, Drawer } from "@material-ui/core";
 import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -27,34 +26,34 @@ export default function Header() {
     { name: "Services", link: "/#services" },
     { name: "Portfolio", link: "/#portfolio" },
     { name: "Blog", link: "/blog" },
+    { name: "Contact Us", link: "/#contact" },
   ];
 
   const Margin8 = {margin:"0 10px"}
-  const theme = useTheme();
   return (
     <>
       <header >
-        <Grid style={{ background: "white", padding: "0 20px" }} wrap='nowrap' container alignItems="center" justifyContent="space-around">
+        <Grid style={{ background: "white", padding: "0 20px" }} wrap='nowrap' container alignItems="center" justifyContent="center">
           <Grid item xs={12} sm={4} md={4} lg={6}>
             <LazyLoadComponent>
             <SocialIcon />
             </LazyLoadComponent>
           </Grid>
           <LazyLoadComponent>
-          <Grid container wrap="nowrap" alignItems="center" item xs={8} sm={8} className='mob-display-none' md={6} lg={4} >
+          <Grid container wrap="nowrap" alignItems="center" item md={6} lg={5} xs={8} sm={8} className='mob-display-none'  >
             <><LocationOnIcon style={Margin8} /><span style={{fontSize:"0.9rem"}}>Naigaon - 401208, Mumbai, Maharashtra</span></>
             <><LocalPhoneIcon style={Margin8} /><span style={{fontSize:"0.9rem"}}>7721804979</span></>
           </Grid>
           </LazyLoadComponent>
         </Grid>
-        <Grid style={{ background: "linear-gradient(90.05deg, #091FF7 -5.66%, #644796 115.61%, #DF7C14 115.63%)", padding: "10px 20px", }} container alignItems="center" justifyContent="space-around">
+        <Grid style={{ background: "linear-gradient(90.05deg, #091FF7 -5.66%, #644796 115.61%, #DF7C14 115.63%)", padding: "10px 20px", }} container alignItems="center" justifyContent="center">
           <Grid item xs={4} sm={4} md={4} lg={4}>
             <Link href="/" aria-label="logo" >
             <LazyLoadImage src={"/images/logo.png"} alt='logo' style={{width:"200px"}}/>
             </Link>
             {/* <p style={{ fontSize: "2rem", color: "white", fontWeight: "800", fontFamily: "system-ui" }}>DEVCRAFT</p> */}
           </Grid>
-          <Grid container className='mobile-no-header' item xs={8} sm={8} md={8} lg={6} alignItems='center' justifyContent="flex-end">
+          <Grid container className='mobile-no-header' item xs={8} sm={8} md={8} lg={7} alignItems='center' justifyContent="flex-end">
             {desktopMenuItems.map((menuItem) => (
               <Grid item key={menuItem.name} style={Margin8}>
                 <Link href={menuItem.link} style={{ textDecoration: "none", color: "white", fontSize: "1.28rem", padding: "0 8px" }}>
@@ -62,7 +61,6 @@ export default function Header() {
                 </Link>
               </Grid>
             ))}
-            <Button variant="contained" color="primary" href={"/#contact"} style={{ ...theme.button.ghost }}>Contact Us</Button>
           </Grid>
           <Grid container wrap='nowrap' item xs={8} className='desktop-display-none' justifyContent={'flex-end'}>
             <IconButton aria-label="CloseMenu" onClick={handleToggleDrawer} style={{ display: { md: 'none' }, color: "white" }}>

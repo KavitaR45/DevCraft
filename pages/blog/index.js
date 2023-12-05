@@ -1,7 +1,6 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/seo';
 import { Box, Button, Grid } from '@material-ui/core';
-import { useTheme } from "@material-ui/styles";
 import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-component';
 import {  collection, getDocs } from 'firebase/firestore';
 import {db} from "../../firebase.config"
@@ -9,8 +8,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Home({ blogContent }) {
-  const theme = useTheme();
-console.log("BLOF CONTENT",blogContent)
   return (
     <>
       <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl='https://www.devcraft.site/blog' />
@@ -18,11 +15,11 @@ console.log("BLOF CONTENT",blogContent)
         <LazyLoadComponent>
           <section style={{ background: `#E2F1F6`, }}>
             <Grid container alignItems="center" justifyContent="center">
-              <h1 style={{ ...theme.typography.h2, marginBottom: "30px" }}>Latest Updates</h1>
+              <h1 style={{ marginBottom: "30px" }}>Latest Updates</h1>
             </Grid>
           </section>
           <section style={{ background: "#F1F2F3" }}>
-            <Grid container spacing={4} alignItems="flex-start" justifyContent="start">
+            <Grid container spacing={4} alignItems="flex-start" justifyContent="flex-start">
               <LazyLoadComponent>
 
               {blogContent.filter(x=>x.status != 'draft').map((x, i) => {
@@ -33,9 +30,8 @@ console.log("BLOF CONTENT",blogContent)
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>
-                        <p style={{ ...theme.typography.p, marginBottom: "0px",  }}>{x.author}</p>
-                        <h2 style={{ ...theme.typography.h3, padding: "0px",textTransform:"capitalize" }}>{x.title}</h2>
-                        <p style={{ ...theme.typography.p, }}>{x.Description.slice(0,105)+'....'}</p>
+                        <h3 className='title' style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
+                        <p>{x.Description.slice(0,105)+'....'}</p>
                         {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
                       </div>
                     </Box>
