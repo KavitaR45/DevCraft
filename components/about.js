@@ -6,7 +6,7 @@ const AboutContent = ({ title, subTitle, description, listItems, linkHref, linkT
         <div className="about-content-six">
             <div className="section-title section-title-three mb-30 tg-heading-subheading animation-style1">
                 <span className="sub-title tg-element-title">{subTitle}</span>
-                <h2 className="title tg-element-title">{title}</h2>
+                <h2>{title}</h2>
             </div>
             <p>{description}</p>
             <div className="about-list">

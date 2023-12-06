@@ -10,7 +10,7 @@ const ProjectItem = ({ imgSrc, projectLink, projectTitle, projectCategory }) => 
         <div className="project-link"><img src="/assets/img/icons/plus_icon.svg" alt="" /></div>
       </div>
       <div className="project-content-four">
-        <h3 className="title">{projectTitle}</h3>
+        <h3 >{projectTitle}</h3>
         <span>{projectCategory}</span>
       </div>
     </div>
@@ -28,7 +28,7 @@ const Project = (props) => {
           <div className="col-lg-6 col-md-8">
             <div className="section-title section-title-three mb-50 tg-heading-subheading animation-style1">
               <span className="sub-title tg-element-title">{props.title}</span>
-              <h2 className="title tg-element-title">{props.desc}</h2>
+              <h2>{props.desc}</h2>
             </div>
           </div>
           <div className="col-lg-6 col-md-4">

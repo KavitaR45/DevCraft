@@ -9,10 +9,11 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const Footer = () => {
     const desktopMenuItems = [
         { name: "Home", link:`${process.env.NEXT_PUBLIC_APP_URL}/#banner` },
-        { name: "About", link:`${process.env.NEXT_PUBLIC_APP_URL}/#about` },
+        { name: "About", link:`${process.env.NEXT_PUBLIC_APP_URL}/about/` },
         { name: "Services", link:`${process.env.NEXT_PUBLIC_APP_URL}/#services` },
         { name: "Portfolio", link:`${process.env.NEXT_PUBLIC_APP_URL}/#portfolio` },
-        { name: "Blog", link:`${process.env.NEXT_PUBLIC_APP_URL}/blog` },
+        { name: "Blog", link:`${process.env.NEXT_PUBLIC_APP_URL}/blog/` },
+        { name: "Contact Us", link:`${process.env.NEXT_PUBLIC_APP_URL}/contact/` },
     ];
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
     const Margin8 = { margin: "0 10px" }

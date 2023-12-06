@@ -22,11 +22,11 @@ export default function Header() {
   }
   const desktopMenuItems = [
     { name: "Home", link:`${process.env.NEXT_PUBLIC_APP_URL}/#banner` },
-    { name: "About", link:`${process.env.NEXT_PUBLIC_APP_URL}/#about` },
+    { name: "About", link:`${process.env.NEXT_PUBLIC_APP_URL}/about/` },
     { name: "Services", link:`${process.env.NEXT_PUBLIC_APP_URL}/#services` },
     { name: "Portfolio", link:`${process.env.NEXT_PUBLIC_APP_URL}/#portfolio` },
-    { name: "Blog", link:`${process.env.NEXT_PUBLIC_APP_URL}/blog` },
-    { name: "Contact Us", link:`${process.env.NEXT_PUBLIC_APP_URL}/#contact` },
+    { name: "Blog", link:`${process.env.NEXT_PUBLIC_APP_URL}/blog/` },
+    { name: "Contact Us", link:`${process.env.NEXT_PUBLIC_APP_URL}/contact/` },
   ];
 
   const Margin8 = {margin:"0 10px"}

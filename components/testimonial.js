@@ -121,7 +121,7 @@ const Testimonial = () => {
               <div className="testimonial-content-five">
                 <div className="section-title title-three mb-50 tg-heading-subheading animation-style1">
                   <span className="sub-title tg-element-title">Our Testimonials</span>
-                  <h2 className="title tg-element-title">What our awesome customers say</h2>
+                  <h2 >What our awesome customers say</h2>
                 </div>
                 <div className="testimonial-item-wrap-five">
                   <Slider ref={sliderRef} {...settings} className="testimonial-active-five">

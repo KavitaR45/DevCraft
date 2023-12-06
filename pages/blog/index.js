@@ -30,7 +30,7 @@ export default function Home({ blogContent }) {
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>
-                        <h3 className='title' style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
+                        <h3 style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
                         <p>{x.Description.slice(0,105)+'....'}</p>
                         {/* <Button variant="contained" color="primary" href={x.canonical_url}>Read More</Button> */}
                       </div>

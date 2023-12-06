@@ -27,7 +27,7 @@ const ServicesSection = (props) => {
                     <div className="col-xl-6 col-lg-7">
                         <div className="section-title-two text-center mb-50">
                             <span className="sub-title tg-element-title">{props.subTitle}</span>
-                            <h2 className="title">{props.title}</h2>
+                            <h2>{props.title}</h2>
                             <p>{props.desc}</p>
                         </div>
                     </div>

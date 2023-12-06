@@ -6513,7 +6513,7 @@ label {
     border: none;
     border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .faq-content .accordion-item:last-child {
@@ -6527,7 +6527,7 @@ label {
     font-size: 18px;
     color: var(--tg-secondary-color);
     text-align: left;
-    background-color: var(--tg-gray-two);
+    background-color: white;
     font-family: var(--tg-heading-font-family);
     border: 1px solid #DFDFDF;
 }
@@ -6538,7 +6538,7 @@ label {
 
 .faq-content .accordion-button:not(.collapsed) {
     color: var(--tg-primary-color);
-    background-color: transparent;
+    background-color: white;
     box-shadow: none;
 }
 
@@ -6551,6 +6551,7 @@ label {
     padding: 20px 30px 30px;
     border: 1px solid #DFDFDF;
     border-top: none;
+    background: white;
 }
 
 .faq-content .accordion-body p {

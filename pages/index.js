@@ -19,7 +19,7 @@ export default function Home({ blogContent }) {
     img: `${process.env.NEXT_PUBLIC_APP_URL}/images/banner/sideImg.png`,
     banner: `${process.env.NEXT_PUBLIC_APP_URL}/images/banner/banner.png`,
     btn: "Hire Me",
-    link: `${process.env.NEXT_PUBLIC_APP_URL}/#contact`,
+    link: `${process.env.NEXT_PUBLIC_APP_URL}/contact/`,
     sectionClass: "banner-section",
     imgClass: "mob-display-none",
     bannerColor: "#E2F1F6",
@@ -138,7 +138,7 @@ export default function Home({ blogContent }) {
             <Grid container alignItems="center" justifyContent="center">
             <div className="section-title section-title-three text-center mb-60 tg-heading-subheading animation-style1">
   <span className="sub-title tg-element-title">Our Blogs</span>
-  <h2 className="title tg-element-title">Read Our Latest Updates</h2>
+  <h2 >Read Our Latest Updates</h2>
   <p>Explore insightful articles and stay informed about the latest trends in technology and development. </p>
 </div>
 
@@ -153,7 +153,7 @@ export default function Home({ blogContent }) {
                         <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                           <LazyLoadImage src={'/images' + x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                           <div style={{ padding: "0 20px 20px" }}>
-                            <h3 className='title' style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
+                            <h3 style={{margin:"15px 0 10px 0"}}>{x.title}</h3>
                             <p >{x.Description.slice(0, 105) + '....'}</p>
                           </div>
                         </Box>
