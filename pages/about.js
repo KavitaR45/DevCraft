@@ -44,31 +44,21 @@ export default function AboutPage() {
     },
     content: "As a dedicated team of skilled developers, we strive to bring your digital ideas to life with precision and creativity. ",
     accordionData: [
-        {
-            key: 1,
-            title: 'Can you redesign an existing website?',
-            content: 'Yes, I offer website revamping services to give your existing site a fresh and modern look. Whether you need a complete redesign or specific improvements, I can tailor my services to meet your requirements.'
-        },
-        {
-            key: 2,
-            title: 'What is your approach to responsive design?',
-            content: 'Responsive design is crucial for ensuring your website looks great on various devices. My approach involves creating flexible and fluid layouts that adapt to different screen sizes, providing an optimal user experience across devices.'
-        },
-        {
-            key: 3,
-            title: 'Can you customize solutions for specific business requirements?',
-            content: 'Absolutely! We believe in providing customized solutions to meet the unique requirements of each business. Whether it\'s web design, e-commerce, or CMS development, we tailor our services to your needs.'
-        },
-        {
-            key: 4,
-            title: 'What sets your e-commerce solutions apart?',
-            content: 'Our e-commerce solutions are designed to boost your online sales by providing comprehensive development services. We focus on creating a seamless and user-friendly shopping experience for your customers.'
-        },
-        {
-            key: 5,
-            title: 'Tell us about your approach to Headless CMS development.',
-            content: 'We harness the power of Headless CMS to streamline content management. This approach allows for greater flexibility, scalability, and efficient content delivery, ensuring an optimal user experience.'
-        },
+      {
+        key: 1,
+        title: 'What sets your e-commerce solutions apart?',
+        content: 'Our e-commerce solutions are designed to boost your online sales by providing comprehensive development services. We focus on creating a seamless and user-friendly shopping experience for your customers.'
+      },
+      {
+        key: 2,
+        title: 'Tell us about your approach to Headless CMS development.',
+        content: 'We harness the power of Headless CMS to streamline content management. This approach allows for greater flexibility, scalability, and efficient content delivery, ensuring an optimal user experience.'
+      },
+      {
+          key: 3,
+          title: 'Do you provide ongoing support after the website is launched?',
+          content: 'Yes, I offer ongoing support to ensure your website continues to function smoothly. Whether you need updates, maintenance, or assistance with any issues.'
+      },
     ],
 }
 

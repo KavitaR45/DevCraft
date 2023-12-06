@@ -11,6 +11,7 @@ import { LazyLoadComponent, LazyLoadImage } from 'react-lazy-load-image-componen
 import ServicesSection from '@/components/services';
 import Project from '@/components/project';
 import Testimonial from '@/components/testimonial';
+import Faq from '@/components/faq';
 
 export default function Home({ blogContent }) {
   const BannerData = {
@@ -114,6 +115,31 @@ export default function Home({ blogContent }) {
       }
     ]
   }
+  const faqData = {
+    parallaxConfig: { "y": 100 },
+    sectionTitle: {
+        subTitle: "Get to Know Us",
+        title: "Frequently Asked Questions"
+    },
+    content: "As a dedicated team of skilled developers, we strive to bring your digital ideas to life with precision and creativity. ",
+    accordionData: [
+        {
+            key: 1,
+            title: 'Can you redesign an existing website?',
+            content: 'Yes, I offer website revamping services to give your existing site a fresh and modern look. Whether you need a complete redesign or specific improvements, I can tailor my services to meet your requirements.'
+        },
+        {
+            key: 2,
+            title: 'What is your approach to responsive design?',
+            content: 'Responsive design is crucial for ensuring your website looks great on various devices. My approach involves creating flexible and fluid layouts that adapt to different screen sizes, providing an optimal user experience across devices.'
+        },
+        {
+            key: 3,
+            title: 'Can you customize solutions for specific business requirements?',
+            content: 'Absolutely! We believe in providing customized solutions to meet the unique requirements of each business. Whether it\'s web design, e-commerce, or CMS development, we tailor our services to your needs.'
+        },
+    ],
+}
   return (
     <>
       <SEO title='DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='Looking for a freelance web developer for your WordPress or eCommerce website? DevCraft offers professional web development services to businesses of all sizes.' canonicalUrl='https://www.devcraft.site/' />
@@ -130,9 +156,13 @@ export default function Home({ blogContent }) {
         <LazyLoadComponent>
           <Project {...Projects} />
         </LazyLoadComponent>
-        {/* <LazyLoadComponent>
+        <LazyLoadComponent>
+          <Faq faqData={faqData}/>
+        </LazyLoadComponent>
+        <LazyLoadComponent>
           <Testimonial />
-        </LazyLoadComponent> */}
+        </LazyLoadComponent>
+        
         <LazyLoadComponent>
           <section style={{ background: `url(/images/services/banner.png) #E2F1F6`, }} id='blog'>
             <Grid container alignItems="center" justifyContent="center">
