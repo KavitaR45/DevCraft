@@ -10,7 +10,7 @@ import { useState } from 'react';
 export default function Home({ blogContent }) {
   return (
     <>
-      <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl='https://www.devcraft.site/blog' />
+      <SEO title='Blog | DevCraft - Freelance Web Developer | WordPress | E-Commerce' description='DevCraft offers professional web development services, specializing in WordPress and E-Commerce websites. Contact us for custom web solutions.' canonicalUrl={`${process.env.NEXT_PUBLIC_APP_URL}/blog/`} />
       <Layout>
         <LazyLoadComponent>
           <section style={{ background: `#E2F1F6`, }}>
@@ -26,7 +26,7 @@ export default function Home({ blogContent }) {
                 return (
                  <>
                   <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
-                    <Link href={x.canonical_url}>
+                    <Link href={process.env.NEXT_PUBLIC_APP_URL+x.canonical_url+'/'}>
                     <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                       <LazyLoadImage src={'/images'+x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                       <div style={{ padding: "0 20px 20px" }}>

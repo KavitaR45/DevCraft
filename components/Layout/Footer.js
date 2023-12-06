@@ -8,11 +8,11 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const Footer = () => {
     const desktopMenuItems = [
-        { name: "Home", link: "/#banner" },
-        { name: "About", link: "/#about" },
-        { name: "Services", link: "/#services" },
-        { name: "Portfolio", link: "/#portfolio" },
-        { name: "Blog", link: "/blog" },
+        { name: "Home", link:`${process.env.NEXT_PUBLIC_APP_URL}/#banner` },
+        { name: "About", link:`${process.env.NEXT_PUBLIC_APP_URL}/#about` },
+        { name: "Services", link:`${process.env.NEXT_PUBLIC_APP_URL}/#services` },
+        { name: "Portfolio", link:`${process.env.NEXT_PUBLIC_APP_URL}/#portfolio` },
+        { name: "Blog", link:`${process.env.NEXT_PUBLIC_APP_URL}/blog` },
     ];
     const MarginBottom = { margin: "0 0 14px 0", fontSize: "1.05rem", lineHeight: "1.8rem" }
     const Margin8 = { margin: "0 10px" }
@@ -21,7 +21,7 @@ const Footer = () => {
             <Grid container spacing={2} justifyContent='space-evenly'>
                 <Grid item xs={10} sm={10} md={4}>
                     <div>
-                        <Link href="/" aria-label="logo" >
+                        <Link href={process.env.NEXT_PUBLIC_APP_URL} aria-label="logo" >
                             <LazyLoadImage alt='footer-bg-logo' style={{ width: "200px",marginBottom:"15px" }} src={"/images/footerLogo.png"} />
                         </Link>
                         <p className='text-white'>From beautiful web design to tailored website development, trust me to bring your digital vision to life. Our web development solutions are customized to fit your unique needs.</p>

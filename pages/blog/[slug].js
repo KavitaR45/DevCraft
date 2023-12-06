@@ -30,7 +30,7 @@ export default function Home({ blogContent, latestPosts }) {
     }
     return (
         <>
-            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={"https://www.devcraft.site" + blogContent.canonical_url} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema} />
+            <SEO title={blogContent.meta_title} description={blogContent.meta_desc} canonicalUrl={process.env.NEXT_PUBLIC_APP_URL + blogContent.canonical_url+'/'} articleSchema={blogContent.schemaMarkup} faqSchema={blogContent.faqSchema} />
             <Layout>
                 <LazyLoadComponent>
                     <section style={{ background: "#F1F2F3" }}>
@@ -56,7 +56,7 @@ export default function Home({ blogContent, latestPosts }) {
                                     <LazyLoadComponent>
                                         {rearrangeObjectsByDate(latestPosts).filter(x=>x.status != 'draft').map((x, i) => {
                                             return (
-                                                <Link href={x.canonical_url} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px",textTransform:"capitalize" }}>
+                                                <Link href={process.env.NEXT_PUBLIC_APP_URL+x.canonical_url+'/'} key={'blogContent' + x.title + i} style={{ display: "flex", margin: "15px 0", fontWeight: "bold", color: "#091FF7", lineHeight: "25px",textTransform:"capitalize" }}>
                                                     <LazyLoadImage alt={x.featured_img} src={'/images' + x.featured_img} style={{ width: "155px", padding: "0 20px 0 10px", objectFit: "contain", }} />
                                                     {x.title}
                                                 </Link>

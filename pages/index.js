@@ -16,17 +16,17 @@ export default function Home({ blogContent }) {
   const BannerData = {
     title1: "Creative Web Development Solutions for Your Business Growth",
     para: <>Get top-quality web development services for WordPress , E-Commerce, Website Revamping, Landing Page, Static or Dynamic sites and Headless CMS. From creating a stunning website to improving your online presence, I offer tailored and affordable solutions for your unique needs.</>,
-    img: "/images/banner/sideImg.png",
-    banner: "/images/banner/banner.png",
+    img: `${process.env.NEXT_PUBLIC_APP_URL}/images/banner/sideImg.png`,
+    banner: `${process.env.NEXT_PUBLIC_APP_URL}/images/banner/banner.png`,
     btn: "Hire Me",
-    link: "/#contact",
+    link: `${process.env.NEXT_PUBLIC_APP_URL}/#contact`,
     sectionClass: "banner-section",
     imgClass: "mob-display-none",
     bannerColor: "#E2F1F6",
     id: "banner"
   }
   const content = {
-    imgSrc: "/assets/img/images/h5_about_img.png",
+    imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/assets/img/images/h5_about_img.png`,
     title: "Crafting Digital Experiences with Precision",
     subTitle: "About Us",
     description: "As a skilled freelance developer, I bring your digital ideas to life. Specializing in web development, I create tailored solutions for your online presence, ensuring functionality, aesthetics, and user satisfaction.",
@@ -77,37 +77,37 @@ export default function Home({ blogContent }) {
     desc: "We’ve Done Lot’s Of Work, Let’s Check Some From Here",
     projectData: [
       {
-        imgSrc: "/images/project/portfolio.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/portfolio.png`,
         projectLink: "https://webwizardry.netlify.app/",
         projectTitle: "Personal Portfolio",
         projectCategory: "Creative Work"
       },
       {
-        imgSrc: "/images/project/web.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/web.png`,
         projectLink: "https://netart.io/",
         projectTitle: "Netart",
         projectCategory: "Design Development"
       },
       {
-        imgSrc: "/images/project/web-1.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/web-1.png`,
         projectLink: "https://glastonemosaic.com/",
         projectTitle: "Glastone Mosaic",
         projectCategory: "Design Development"
       },
       {
-        imgSrc: "/images/project/ecom.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/ecom.png`,
         projectLink: "https://parrotcrow.in/",
         projectTitle: "Parrot Crow",
         projectCategory: "Development"
       },
       {
-        imgSrc: "/images/project/sync.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/sync.png`,
         projectLink: "https://syncmedia.io/",
         projectTitle: "Sync Media",
         projectCategory: "Creative"
       },
       {
-        imgSrc: "/images/project/service.png",
+        imgSrc: `${process.env.NEXT_PUBLIC_APP_URL}/images/project/service.png`,
         projectLink: "https://dataasservices.com/",
         projectTitle: "Data As Services",
         projectCategory: "Design Development"
@@ -149,7 +149,7 @@ export default function Home({ blogContent }) {
                 return (
                   <>
                     <Grid key={'blogContent' + x.title + i} item xs={12} sm={6} md={6} lg={4}>
-                      <Link href={x.canonical_url}>
+                      <Link href={process.env.NEXT_PUBLIC_APP_URL+x.canonical_url+'/'}>
                         <Box style={{ background: "white", borderRadius: "20px", padding: "10px" }}>
                           <LazyLoadImage src={'/images' + x.featured_img} style={{ width: "100%", objectFit: "cover", borderRadius: "20px 20px 0 0" }} alt={x.title} />
                           <div style={{ padding: "0 20px 20px" }}>
@@ -163,7 +163,7 @@ export default function Home({ blogContent }) {
                 )
               })}
             </Grid>
-            <Link href={"/blog"} className="btn btn-three" style={{ margin: "20px auto 0 auto", display: "block", width: "max-content" }} >View All</Link>
+            <Link href={`${process.env.NEXT_PUBLIC_APP_URL}/blog/`} className="btn btn-three" style={{ margin: "20px auto 0 auto", display: "block", width: "max-content" }} >View All</Link>
             </section>
         </LazyLoadComponent>
         <LazyLoadComponent>
